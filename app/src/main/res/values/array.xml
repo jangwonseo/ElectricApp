@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="selected">
+        <item>구리</item>
+        <item>철</item>
+        <item>알루미늄</item>
+        <item>은</item>
+    </string-array>
+</resources>
