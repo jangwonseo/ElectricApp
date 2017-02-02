@@ -16,16 +16,16 @@ import java.util.HashMap;
 public class MaterialSpecActivity extends AppCompatActivity {
     ArrayAdapter<CharSequence> adspin;
 
-    EditText spring_editText;
-    EditText busbar_editText;
+    EditText dynamicLoad_editText;
+    EditText busbarRadius_editText;
     Button nextButton;
 
-    float springValue;
-    float busbarValue;
-    float materialElasticity; //탄성계수
-    float materialPoisson; //포아송비
-    float materialResistivity; //저항률
-    float materialVoltageDrop; //전압강하
+    float dynamicLoadValue;
+    float busbarRadiusValue;
+    float materialElasticityValue; //탄성계수
+    float materialPoissonValue; //포아송비
+    float materialResistivityValue; //저항률
+    float materialVoltageDropValue; //전압강하
 
     HashMap<String, Float> map;
 
@@ -38,9 +38,10 @@ public class MaterialSpecActivity extends AppCompatActivity {
         map = new HashMap<String, Float>();
 
         nextButton = (Button)findViewById(R.id.materialSpec_nextBtn);
-        spring_editText = (EditText)findViewById(R.id.spring);
-        busbar_editText = (EditText)findViewById(R.id.busbar);
+        dynamicLoad_editText = (EditText)findViewById(R.id.spring);
+        busbarRadius_editText = (EditText)findViewById(R.id.busbar);
 
+        //스피너 추가
         Spinner spinner = (Spinner) findViewById(R.id.materialSpinner);
         spinner.setPrompt("선택하시오");
 
@@ -54,28 +55,28 @@ public class MaterialSpecActivity extends AppCompatActivity {
                 switch (materialStr){
                     //구리, 철, 알루미늄, 은 각각의 고유 값들을 입력한다.
                     case "구리":
-                        materialElasticity = 11900.00f;
-                        materialPoisson = 0.326f;
-                        materialResistivity = 17.8f;
-                        materialVoltageDrop = 0.43f;
+                        materialElasticityValue = 11900.00f;
+                        materialPoissonValue = 0.326f;
+                        materialResistivityValue = 17.8f;
+                        materialVoltageDropValue = 0.43f;
                         break;
                     case "철":
-                        materialElasticity = 11900.00f;
-                        materialPoisson = 0.326f;
-                        materialResistivity = 17.8f;
-                        materialVoltageDrop = 0.43f;
+                        materialElasticityValue = 11900.00f;
+                        materialPoissonValue = 0.326f;
+                        materialResistivityValue = 17.8f;
+                        materialVoltageDropValue = 0.43f;
                         break;
                     case "알루미늄":
-                        materialElasticity = 11900.00f;
-                        materialPoisson = 0.326f;
-                        materialResistivity = 17.8f;
-                        materialVoltageDrop = 0.43f;
+                        materialElasticityValue = 11900.00f;
+                        materialPoissonValue = 0.326f;
+                        materialResistivityValue = 17.8f;
+                        materialVoltageDropValue = 0.43f;
                         break;
                     case "은":
-                        materialElasticity = 11900.00f;
-                        materialPoisson = 0.326f;
-                        materialResistivity = 17.8f;
-                        materialVoltageDrop = 0.43f;
+                        materialElasticityValue = 11900.00f;
+                        materialPoissonValue = 0.326f;
+                        materialResistivityValue = 17.8f;
+                        materialVoltageDropValue = 0.43f;
                         break;
                     default:
                         Toast.makeText(MaterialSpecActivity.this, "선택 물질이 잘 못 되었습니다.", Toast.LENGTH_SHORT).show();
@@ -88,15 +89,15 @@ public class MaterialSpecActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
-                springValue = Float.parseFloat(spring_editText.getText().toString());
-                busbarValue = Float.parseFloat(busbar_editText.getText().toString());
+                dynamicLoadValue = Float.parseFloat(dynamicLoad_editText.getText().toString());
+                busbarRadiusValue = Float.parseFloat(busbarRadius_editText.getText().toString());
 
-                map.put("springValue",springValue);
-                map.put("busbarValue",busbarValue);
-                map.put("materialElasticity",materialElasticity);
-                map.put("materialPoisson",materialPoisson);
-                map.put("materialResistivity",materialResistivity);
-                map.put("materialVoltageDrop",materialVoltageDrop);
+                map.put("dynamicLoadValue",dynamicLoadValue);
+                map.put("busbarRadiusValue",busbarRadiusValue);
+                map.put("materialElasticityValue",materialElasticityValue);
+                map.put("materialPoissonValue",materialPoissonValue);
+                map.put("materialResistivityValue",materialResistivityValue);
+                map.put("materialVoltageDropValue",materialVoltageDropValue);
 
                 Intent getIntent = getIntent();
                 HashMap<String, Float> RatedSpecValue = (HashMap<String, Float>) getIntent.getSerializableExtra("RatedSpecValue");
