@@ -54,7 +54,8 @@
                 <EditText
                     android:id="@+id/springArray"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:inputType="numberDecimal"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -80,7 +81,8 @@
                 <EditText
                     android:id="@+id/theNumberOfClip"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:inputType="numberDecimal"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -108,7 +110,8 @@
                 <EditText
                     android:id="@+id/minimumArea"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:inputType="numberDecimal"/>
             </LinearLayout>
 
 
@@ -137,7 +140,8 @@
                 <EditText
                     android:id="@+id/clipLength"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:inputType="numberDecimal"/>
             </LinearLayout>
 
 
@@ -166,7 +170,8 @@
                 <EditText
                     android:id="@+id/clipRadius"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:inputType="numberDecimal"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -194,7 +199,8 @@
                 <EditText
                     android:id="@+id/clipDistance"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:inputType="numberDecimal"/>
             </LinearLayout>
 
 
@@ -229,7 +235,7 @@
                 android:id="@+id/clipConfig_nextBtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="30dp"
+                android:textSize="20dp"
                 android:text="다음"/>
         </LinearLayout>
 
