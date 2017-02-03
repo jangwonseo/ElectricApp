@@ -20,12 +20,12 @@ public class MaterialSpecActivity extends AppCompatActivity {
     EditText busbarRadius_editText;
     Button nextButton;
 
-    float dynamicLoadValue;
-    float busbarRadiusValue;
-    float materialElasticityValue; //탄성계수
-    float materialPoissonValue; //포아송비
-    float materialResistivityValue; //저항률
-    float materialVoltageDropValue; //전압강하
+    float dynamicLoadValue = 0.0f;
+    float busbarRadiusValue = 0.0f;
+    float materialElasticityValue = 0.0f; //탄성계수
+    float materialPoissonValue = 0.0f; //포아송비
+    float materialResistivityValue = 0.0f; //저항률
+    float materialVoltageDropValue = 0.0f; //전압강하
 
     HashMap<String, Float> map;
 
@@ -89,8 +89,17 @@ public class MaterialSpecActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
-                dynamicLoadValue = Float.parseFloat(dynamicLoad_editText.getText().toString());
-                busbarRadiusValue = Float.parseFloat(busbarRadius_editText.getText().toString());
+
+                if(dynamicLoad_editText.getText().toString().equals("")){
+                    dynamicLoadValue = 0.0f;
+                }else{
+                    dynamicLoadValue = Float.parseFloat(dynamicLoad_editText.getText().toString());
+                }
+                if(busbarRadius_editText.getText().toString().equals("")){
+                    busbarRadiusValue = 0.0f;
+                }else{
+                    busbarRadiusValue = Float.parseFloat(busbarRadius_editText.getText().toString());
+                }
 
                 map.put("dynamicLoadValue",dynamicLoadValue);
                 map.put("busbarRadiusValue",busbarRadiusValue);

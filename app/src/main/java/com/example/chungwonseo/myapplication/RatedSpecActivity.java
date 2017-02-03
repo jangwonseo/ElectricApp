@@ -12,7 +12,6 @@ import java.util.HashMap;
 public class RatedSpecActivity extends AppCompatActivity {
     EditText ratedCurrent_editText;
     EditText faultCurrent_editText;
-    EditText peakFaultCurrent_editText;
     Button nextButton;
 
     float ratedCurrentValue;
@@ -34,9 +33,17 @@ public class RatedSpecActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
+                if(ratedCurrent_editText.getText().toString().equals("")){
+                    ratedCurrentValue = 0.0f;
+                }else{
+                    ratedCurrentValue = Float.parseFloat(ratedCurrent_editText.getText().toString());
+                }
+                if(faultCurrent_editText.getText().toString().equals("")){
+                    faultCurrentValue = 0.0f;
+                }else{
+                    faultCurrentValue = Float.parseFloat(faultCurrent_editText.getText().toString());
+                }
 
-                ratedCurrentValue = Float.parseFloat(ratedCurrent_editText.getText().toString());
-                faultCurrentValue = Float.parseFloat(faultCurrent_editText.getText().toString());
 
                 map.put("ratedCurrentValue",ratedCurrentValue);
                 map.put("faultCurrentValue",faultCurrentValue);

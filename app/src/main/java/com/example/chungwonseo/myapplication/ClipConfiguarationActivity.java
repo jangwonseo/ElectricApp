@@ -45,12 +45,36 @@ public class ClipConfiguarationActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
-                springArrayValue = Float.parseFloat(springArray_editText.getText().toString());
-                theNumberOfClipValue = Float.parseFloat(theNumberOfClip_editText.getText().toString());
-                minimumAreaValue = Float.parseFloat(minimumArea_editText.getText().toString());
-                clipLengthValue = Float.parseFloat(clipLength_editText.getText().toString());
-                clipRadiusValue = Float.parseFloat(clipRadius_editText.getText().toString());
-                clipDistanceValue = Float.parseFloat(clipDistance_editText.getText().toString());
+                if(springArray_editText.getText().toString().equals("")){
+                    springArrayValue = 0.0f;
+                }else{
+                    springArrayValue = Float.parseFloat(springArray_editText.getText().toString());
+                }
+                if(theNumberOfClip_editText.getText().toString().equals("")){
+                    theNumberOfClipValue = 0.0f;
+                }else{
+                    theNumberOfClipValue = Float.parseFloat(theNumberOfClip_editText.getText().toString());
+                }
+                if(minimumArea_editText.getText().toString().equals("")){
+                    minimumAreaValue = 0.0f;
+                }else{
+                    minimumAreaValue = Float.parseFloat(minimumArea_editText.getText().toString());
+                }
+                if(clipLength_editText.getText().toString().equals("")){
+                    clipLengthValue = 0.0f;
+                }else{
+                    clipLengthValue = Float.parseFloat(clipLength_editText.getText().toString());
+                }
+                if(clipRadius_editText.getText().toString().equals("")){
+                    clipRadiusValue = 0.0f;
+                }else{
+                    clipRadiusValue = Float.parseFloat(clipRadius_editText.getText().toString());
+                }
+                if(clipDistance_editText.getText().toString().equals("")){
+                    clipDistanceValue = 0.0f;
+                }else{
+                    clipDistanceValue = Float.parseFloat(clipDistance_editText.getText().toString());
+                }
 
                 map.put("springArrayValue",springArrayValue);
                 map.put("theNumberOfClipValue",theNumberOfClipValue);
