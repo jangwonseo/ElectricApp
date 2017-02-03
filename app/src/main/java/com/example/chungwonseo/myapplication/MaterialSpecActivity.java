@@ -20,12 +20,12 @@ public class MaterialSpecActivity extends AppCompatActivity {
     EditText busbarRadius_editText;
     Button nextButton;
 
-    float dynamicLoadValue = 0.0f;
-    float busbarRadiusValue = 0.0f;
-    float materialElasticityValue = 0.0f; //탄성계수
-    float materialPoissonValue = 0.0f; //포아송비
-    float materialResistivityValue = 0.0f; //저항률
-    float materialVoltageDropValue = 0.0f; //전압강하
+    float dynamicLoadValue;
+    float busbarRadiusValue;
+    float materialElasticityValue; //탄성계수
+    float materialPoissonValue; //포아송비
+    float materialResistivityValue; //저항률
+    float materialVoltageDropValue; //전압강하
 
     HashMap<String, Float> map;
 
@@ -91,12 +91,14 @@ public class MaterialSpecActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if(dynamicLoad_editText.getText().toString().equals("")){
-                    dynamicLoadValue = 0.0f;
+                    Toast.makeText(getApplicationContext(), "입력되지 않은 값이 있습니다.", Toast.LENGTH_SHORT).show();
+                    return;
                 }else{
                     dynamicLoadValue = Float.parseFloat(dynamicLoad_editText.getText().toString());
                 }
                 if(busbarRadius_editText.getText().toString().equals("")){
-                    busbarRadiusValue = 0.0f;
+                    Toast.makeText(getApplicationContext(), "입력되지 않은 값이 있습니다.", Toast.LENGTH_SHORT).show();
+                    return;
                 }else{
                     busbarRadiusValue = Float.parseFloat(busbarRadius_editText.getText().toString());
                 }

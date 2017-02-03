@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.HashMap;
 
@@ -46,32 +47,38 @@ public class ClipConfiguarationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(springArray_editText.getText().toString().equals("")){
-                    springArrayValue = 0.0f;
+                    Toast.makeText(getApplicationContext(), "입력되지 않은 값이 있습니다.", Toast.LENGTH_SHORT).show();
+                    return;
                 }else{
                     springArrayValue = Float.parseFloat(springArray_editText.getText().toString());
                 }
                 if(theNumberOfClip_editText.getText().toString().equals("")){
-                    theNumberOfClipValue = 0.0f;
+                    Toast.makeText(getApplicationContext(), "입력되지 않은 값이 있습니다.", Toast.LENGTH_SHORT).show();
+                    return;
                 }else{
                     theNumberOfClipValue = Float.parseFloat(theNumberOfClip_editText.getText().toString());
                 }
                 if(minimumArea_editText.getText().toString().equals("")){
-                    minimumAreaValue = 0.0f;
+                    Toast.makeText(getApplicationContext(), "입력되지 않은 값이 있습니다.", Toast.LENGTH_SHORT).show();
+                    return;
                 }else{
                     minimumAreaValue = Float.parseFloat(minimumArea_editText.getText().toString());
                 }
                 if(clipLength_editText.getText().toString().equals("")){
-                    clipLengthValue = 0.0f;
+                    Toast.makeText(getApplicationContext(), "입력되지 않은 값이 있습니다.", Toast.LENGTH_SHORT).show();
+                    return;
                 }else{
                     clipLengthValue = Float.parseFloat(clipLength_editText.getText().toString());
                 }
                 if(clipRadius_editText.getText().toString().equals("")){
-                    clipRadiusValue = 0.0f;
+                    Toast.makeText(getApplicationContext(), "입력되지 않은 값이 있습니다.", Toast.LENGTH_SHORT).show();
+                    return;
                 }else{
                     clipRadiusValue = Float.parseFloat(clipRadius_editText.getText().toString());
                 }
                 if(clipDistance_editText.getText().toString().equals("")){
-                    clipDistanceValue = 0.0f;
+                    Toast.makeText(getApplicationContext(), "입력되지 않은 값이 있습니다.", Toast.LENGTH_SHORT).show();
+                    return;
                 }else{
                     clipDistanceValue = Float.parseFloat(clipDistance_editText.getText().toString());
                 }

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.HashMap;
 
@@ -34,12 +35,14 @@ public class RatedSpecActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(ratedCurrent_editText.getText().toString().equals("")){
-                    ratedCurrentValue = 0.0f;
+                    Toast.makeText(getApplicationContext(), "입력되지 않은 값이 있습니다.", Toast.LENGTH_SHORT).show();
+                    return;
                 }else{
                     ratedCurrentValue = Float.parseFloat(ratedCurrent_editText.getText().toString());
                 }
                 if(faultCurrent_editText.getText().toString().equals("")){
-                    faultCurrentValue = 0.0f;
+                    Toast.makeText(getApplicationContext(), "입력되지 않은 값이 있습니다.", Toast.LENGTH_SHORT).show();
+                    return;
                 }else{
                     faultCurrentValue = Float.parseFloat(faultCurrent_editText.getText().toString());
                 }
